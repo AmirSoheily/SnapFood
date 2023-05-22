@@ -12,7 +12,7 @@ export default function MealsItemForm(props) {
           type: "number",
           min: "1",
           max: "5",
-          defaultValue: "1",
+          defaultValue: "5",
         }}
       />
       <AddCircleOutlineIcon></AddCircleOutlineIcon>

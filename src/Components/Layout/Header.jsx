@@ -7,6 +7,7 @@ export default function Header() {
     <Fragment>
       <header className={classes.header}>
         <h1>Snapp Food</h1>
+
         <HeaderCartButton />
       </header>
       <div className={classes["main-image"]}>
