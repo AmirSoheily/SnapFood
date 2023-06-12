@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartIcon from "../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
-export default function HeaderCartButton() {
+import CartContext from "../Provider/Cart-Context";
+export default function HeaderCartButton(props) {
+  const Ctrx = useContext(CartContext);
+
+  const Badge = Ctrx.items.reduce((curitem, item) => {
+    return curitem + item.amount;
+  }, 0);
+
   return (
-    <button className={classes.button}>
+    <button onClick={props.OnClick} className={classes.button}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
       <span>Your Cart</span>
-      <span className={classes.badge}>3</span>
+      <span className={classes.badge}>{Badge}</span>
     </button>
   );
 }

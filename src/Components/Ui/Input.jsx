@@ -1,10 +1,13 @@
 import React from "react";
 import classes from "./Card.module.css";
-export default function Input(props) {
+const Input = React.forwardRef((props, ref) => {
   return (
     <div className={classes.input}>
       <label htmlFor={props.input}>{props.label}</label>
-      <input {...props.input}>{props.childerns}</input>
+      <input ref={ref} {...props.input}>
+        {props.childerns}
+      </input>
     </div>
   );
-}
+});
+export default Input;

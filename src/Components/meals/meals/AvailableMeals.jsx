@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import classes from "./AvailableMeals.module.css";
 import classUi from "../../Ui/Card.module.css";
 import MealsItem from "../MealsItem/MealsItem";
@@ -26,6 +26,7 @@ export default function AvailableMeals(props) {
   const Mealss = Dummy_meals.map((meals) => (
     <MealsItem
       name={meals.name}
+      id={meals.id}
       discrption={meals.discrption}
       price={meals.price}
       key={meals.id}
